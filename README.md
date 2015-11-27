@@ -12,3 +12,7 @@
 
 ## Travis Link:
 * [![Build Status](https://travis-ci.org/martinffg/aydoo-final-json.svg?branch=master)](https://travis-ci.org/martinffg/aydoo-final-json)
+
+##Enunciado Link
+
+* https://docs.google.com/document/d/1bVY0kAl93K-AmJxQEwWpxHzv35kRmWFCa43etBw5yWM/edit?usp=sharing
