@@ -10,22 +10,32 @@ public class ObtenerNombre {
 
 	public String getNombreEntidad() {
 
-		return uppercasePrimeraLetra(this.nombre.substring(this.nombre.indexOf('-') + 1, this.nombre.indexOf('.') ));
+		return upperCasePrimeraLetra(this.nombre.substring(this.nombre.indexOf('-') + 1, this.nombre.indexOf('.') ));
 
 	}
-	
-	private String uppercasePrimeraLetra(String cadena)
+	public String getPahtArchivoSalida() {
+
+		return this.nombre.substring(0, this.nombre.indexOf('-') - 10).concat(this.getNombreArchivo());
+
+	}
+
+	public String getNombreArchivo() {
+
+		return this.nombre.substring(this.nombre.indexOf('-') + 1);
+
+	}
+
+	private String upperCasePrimeraLetra(String cadena)
 	{
-	    boolean prevWasWhiteSp = true;
+	    boolean isPrimeraLetra = true;
 	    char[] chars = cadena.toCharArray();
 	    for (int i = 0; i < chars.length; i++) {
-	        if (Character.isLetter(chars[i])) {
-	            if (prevWasWhiteSp) {
+	        if ((Character.isLetter(chars[i]))&& (isPrimeraLetra)) {
 	                chars[i] = Character.toUpperCase(chars[i]);
-	            }
-	            prevWasWhiteSp = false;
+	            isPrimeraLetra = false; 
+	           
 	        } else {
-	            prevWasWhiteSp = Character.isWhitespace(chars[i]);
+	            isPrimeraLetra = Character.isWhitespace(chars[i]);
 	        }
 	    }
 	    return new String(chars);
