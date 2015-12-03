@@ -6,7 +6,9 @@ public class Controlador {
 
 	private ManejadorJson jsonEntrada, jsonSalida;
 	private ArrayList<RegistroJson> arrayRegistrosJson;
-	private boolean isLecturaCorrecta;
+	private boolean isEscrituraCorrecta,isLecturaCorrecta;
+
+	
 	
 
 	public void modoGraficoObtenerDatos(String entrada) {
@@ -17,11 +19,22 @@ public class Controlador {
 
 	}
 
-	
+	public void modoGraficoEscribirDatos(String nombreArchivoSalida, ArrayList<RegistroJson> arrayRegistrosJson) {
+		jsonSalida = new ManejadorJson(nombreArchivoSalida, true);
+		jsonSalida.setArchivoDinamico(arrayRegistrosJson);
+
+		jsonSalida.escribirSalidaJson();
+		this.isEscrituraCorrecta = this.jsonSalida.isOperacionSatisfactoria();
+	}
+
 	public ArrayList<RegistroJson> getVectorDeRegistros() {
 		return this.arrayRegistrosJson;
 	}
-	
+	public boolean isEscrituraSatisfactoria() {
+
+		return this.isEscrituraCorrecta;
+
+	}
 
 	public boolean isLecturaSatisfactoria() {
 		return isLecturaCorrecta;
