@@ -1,0 +1,4 @@
+{"campos":[
+	{"nombre":"nombre", "tipo":"string"}, 
+	{"nombre":"apellido", "tipo":"string"}
+]}
