@@ -53,6 +53,7 @@
 
 	<target name="compilar.aplicacion" depends="setup, resolve">
 		<javac srcdir="src/main/java" destdir="${build}" includeantruntime="false" debug="yes" target="1.8">
+		<classpath refid="classpath" />
 		</javac>
 	</target>
 
@@ -147,11 +148,7 @@
 		<get src="http://repo1.maven.org/maven2/org/apache/ivy/ivy/${ivy.install.version}/ivy-${ivy.install.version}.jar" dest="${ivy.jar.file}" usetimestamp="true" />
 	</target>
 	
-	<target name="download-gson" unless="skip.download">
-		<mkdir dir="${ivy.jar.dir}" />
-		<echo message="installing GSON..." />
-		<get src="http://repo1.maven.org/maven2/com/google/code/gson/gson/2.5/gson-2.5.jar" dest="${ivy.jar.file}" usetimestamp="true" />
-	</target>
+	
 
 	<target name="install-ivy" depends="download-ivy" description="--> install ivy">
 		<path id="ivy.lib.path">
