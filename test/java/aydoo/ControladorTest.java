@@ -10,7 +10,33 @@ import main.java.aydoo.RegistroJson;
 
 public class ControladorTest {
 
-	
+	@Test
+	public void cuandoArchivoDeEntradaNoExisteModoConsola() {
+		String archivoEntrada = "F:/testFiles/definicion-producto.json";
+		String archivoSalida = "F:/testFiles/producto.json";
+		ArrayList<RegistroJson> arrayPrueba = null;
+
+		Controlador controlador = new Controlador();
+		controlador.modoConsola(archivoEntrada, archivoSalida);
+		arrayPrueba = controlador.getVectorDeRegistros();
+
+		Assert.assertEquals(0, arrayPrueba.size());
+		Assert.assertFalse(controlador.isEscrituraSatisfactoria());
+		Assert.assertFalse(controlador.isLecturaSatisfactoria());
+	}
+
+	@Test
+	public void cuandoArchivoDeEntradaExisteModoConsola() {
+		String archivoEntrada = "testFiles/definicion-producto.json";
+		String archivoSalida = "testFiles/producto.json";
+
+		Controlador controlador = new Controlador();
+		controlador.modoConsola(archivoEntrada, archivoSalida);
+		Assert.assertNotEquals(0, controlador.getVectorDeRegistros().size());
+		Assert.assertTrue(controlador.isEscrituraSatisfactoria());
+		Assert.assertTrue(controlador.isLecturaSatisfactoria());
+	}
+
 	@Test
 	public void cuandoArchivoDeEntradaNoExisteModoGrafico() {
 		String archivoEntrada = "F:/testFiles/definicion-producto.json";
@@ -32,7 +58,7 @@ public class ControladorTest {
 		Assert.assertEquals(2, controlador.getVectorDeRegistros().size());
 		Assert.assertTrue(controlador.isLecturaSatisfactoria());
 	}
-	
+
 	@Test
 	public void escrituraEnArchivoCuandoArchivoDeEntradaNoExisteModoGrafico() {
 		String archivoEntrada = "F:/testFiles/definicion-producto.json";
@@ -64,5 +90,5 @@ public class ControladorTest {
 		Assert.assertTrue(controlador.isEscrituraSatisfactoria());
 		Assert.assertTrue(controlador.isLecturaSatisfactoria());
 	}
-	
+
 }
