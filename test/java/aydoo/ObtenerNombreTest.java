@@ -18,6 +18,17 @@ public class ObtenerNombreTest {
 	}
 	
 	@Test
+	public void obtenerElnombreDeLaEntidadAPartirDeUnPathDondeLaPrimeraLetraNoEsUnChar() {
+		String archivoEntrada = "testFiles/definicion-1producto.json";
+
+		ObtenerNombre obtenerNombre = new ObtenerNombre(archivoEntrada);
+		String nombreEntidad = obtenerNombre.getNombreEntidad();
+		
+		Assert.assertEquals(nombreEntidad, "1Producto");
+	}
+	
+	
+	@Test
 	public void obtenerElnombreDeArchivoAPartirDeUnPath() {
 		String archivoEntrada = "testFiles/definicion-producto.json";
 
@@ -37,6 +48,5 @@ public class ObtenerNombreTest {
 		
 		Assert.assertEquals(pathArchivoDeSalida, archivoSalida);
 	}
-
 
 }

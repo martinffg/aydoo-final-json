@@ -34,9 +34,7 @@ public class ObtenerNombre {
 	                chars[i] = Character.toUpperCase(chars[i]);
 	            isPrimeraLetra = false; 
 	           
-	        } else {
-	            isPrimeraLetra = Character.isWhitespace(chars[i]);
-	        }
+	        } 
 	    }
 	    return new String(chars);
 	}
