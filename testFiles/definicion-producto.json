@@ -1,4 +1,4 @@
 {"campos":[
-	{"nombre":"identificador", "tipo":"string"}, 
-	{"nombre":"apellido", "tipo":"string"}
+	{"nombre":"identificador", "tipo":"String"}, 
+	{"nombre":"apellido", "tipo":"String"}
 ]}
