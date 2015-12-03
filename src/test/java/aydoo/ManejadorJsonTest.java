@@ -2,10 +2,8 @@ package test.java.aydoo;
 
 import java.util.ArrayList;
 import java.util.Iterator;
-
 import org.junit.Assert;
 import org.junit.Test;
-
 import main.java.aydoo.ManejadorJson;
 import main.java.aydoo.RegistroJson;
 

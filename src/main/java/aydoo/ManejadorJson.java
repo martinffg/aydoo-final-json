@@ -4,15 +4,8 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.Set;
-import java.util.Map;
 import java.util.Iterator;
 import java.util.ArrayList;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
-import com.google.gson.stream.JsonReader;
 
 public class ManejadorJson {
 
@@ -31,32 +24,10 @@ public class ManejadorJson {
 	public void leerDefinicionJson() {
 		if (!this.isEscrituraActivada()){
 			FileReader fileLectura;
+			ParserJson parserJson=new ParserJson();
 			try {
 				fileLectura = new FileReader(this.path);
-				JsonElement valorEntradaArchivoJson=null;
-				JsonParser parser = new JsonParser();
-				JsonReader jsonR = new JsonReader(fileLectura);
-		        JsonElement datos = parser.parse(jsonR);
-		        JsonObject jsonObj = datos.getAsJsonObject();
-		        Set<Map.Entry<String,JsonElement>> archivoJson = jsonObj.entrySet();
-		        Iterator<Map.Entry<String,JsonElement>> iterArchivoJson = archivoJson.iterator();
-		        while (iterArchivoJson.hasNext()){
-		        	Map.Entry<String,JsonElement> entradaArchivoJson = iterArchivoJson.next();
-		        	valorEntradaArchivoJson = entradaArchivoJson.getValue();
-		        }
-		        JsonArray datosArray = valorEntradaArchivoJson.getAsJsonArray();
-		        Iterator<JsonElement> iterArray = datosArray.iterator();
-		        while (iterArray.hasNext()) {
-		        	JsonElement entradaArray = iterArray.next();
-		        	JsonObject objArray = entradaArray.getAsJsonObject();
-		                        
-		            String nombreReg = objArray.get("nombre").getAsString();
-		            String tipoReg = objArray.get("tipo").getAsString();
-		            String valorReg ="";
-		            	
-		            RegistroJson registroNuevo = new RegistroJson(tipoReg,nombreReg,valorReg);
-		            this.archivoDinamico.add(registroNuevo);
-		        }
+				  this.archivoDinamico=parserJson.getArchivoDinamico(fileLectura);
 		        fileLectura.close();
 		        this.operacionSatisfactoria=true;
 			} catch (FileNotFoundException e) {
