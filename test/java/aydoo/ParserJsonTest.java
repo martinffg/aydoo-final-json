@@ -1,15 +1,11 @@
 package test.java.aydoo;
 
-import static org.junit.Assert.*;
-
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
-
 import org.junit.Assert;
 import org.junit.Test;
-
 import main.java.aydoo.ParserJson;
 import main.java.aydoo.RegistroJson;
 

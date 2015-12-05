@@ -1,6 +1,7 @@
 <project xmlns:ivy="antlib:org.apache.ivy.ant" name="tp-final-aydoo" basedir="." default="test">
 	<property name="build" location="build" />
 	<property name="libs" location="libs" />
+	<property name="testFiles" location="testFiles"/>
 	<property name="classes.dir" location="build" />
 	<property name="instrumented.dir" location="${build}/instrumented" />
 	<property name="cobertura.dir" location="${libs}" />
@@ -141,6 +142,14 @@
                 <formatter type="plain" usefile="false"/>
             </batchtest>
         </junit>
+		<unzip src="${libs}/gson-jar-2.5.jar" dest="${build}">
+			<patternset>
+				<include name="**/*.class"/>
+			</patternset>
+		</unzip>
+		<copy todir="${build}/testFiles" preservelastmodified="true">
+		    <fileset dir="${testFiles}"/>
+		</copy>
     </target>
 
 
