@@ -18,6 +18,17 @@ public class ObtenerNombreTest {
 	}
 	
 	@Test
+	public void obtenerExtensionDeUnArchivo() {
+		String archivoEntrada = "testFiles/definicion-producto.json";
+
+		ObtenerNombre obtenerNombre = new ObtenerNombre(archivoEntrada);
+		String extensionEntidad = obtenerNombre.getExtensionArchivo();
+		
+		Assert.assertEquals(extensionEntidad, "json");
+	}
+	
+	
+	@Test
 	public void obtenerElnombreDeLaEntidadAPartirDeUnPathDondeLaPrimeraLetraNoEsUnChar() {
 		String archivoEntrada = "testFiles/definicion-1producto.json";
 

@@ -13,6 +13,12 @@ public class ObtenerNombre {
 		return upperCasePrimeraLetra(this.nombre.substring(this.nombre.indexOf('-') + 1, this.nombre.indexOf('.') ));
 
 	}
+	
+	public String getExtensionArchivo() {
+
+		return this.nombre.substring(this.nombre.length()-4);
+
+	}
 	public String getPahtArchivoSalida() {
 
 		return this.nombre.substring(0, this.nombre.indexOf('-') - 10).concat(this.getNombreArchivo());
