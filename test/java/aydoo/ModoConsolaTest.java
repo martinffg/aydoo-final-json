@@ -16,6 +16,7 @@ public class ModoConsolaTest {
 	modoConsola.ejecutar();
 
 	Assert.assertTrue(modoConsola.isEscrituraSatisfactoria());
+	Assert.assertEquals (modoConsola.mensajeDeSalida(),"El archivo se escribio Correctamente");
 	}
 	
 	@Test
@@ -27,6 +28,18 @@ public class ModoConsolaTest {
 	modoConsola.ejecutar();
 
 	Assert.assertFalse(modoConsola.isEscrituraSatisfactoria());
+	Assert.assertEquals (modoConsola.mensajeDeSalida(),"ERROR, El archivo se escribio Correctamente");
 	}
 
+	@Test
+	public void escrituraDeArchivoFallidaConArchivoDeExtensionesDiferentes() {
+	String	 archivoEntrada="testFiles/definicion-product.json";
+	String	 archivoSalida="testFiles/producto.jso";
+
+	ModoConsola modoConsola=new ModoConsola(archivoEntrada,archivoSalida);
+	modoConsola.ejecutar();
+
+	Assert.assertFalse(modoConsola.isEscrituraSatisfactoria());
+	Assert.assertEquals (modoConsola.mensajeDeSalida(),"Las extensiones no son iguales");
+	}
 }
