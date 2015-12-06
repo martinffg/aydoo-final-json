@@ -1,6 +1,5 @@
 package main.java.aydoo;
 
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -30,12 +29,9 @@ public class ManejadorJson {
 				this.archivoDinamico=parserJson.getArchivoDinamico(fileLectura);
 		        fileLectura.close();
 		        this.operacionSatisfactoria=true;
-			} catch (FileNotFoundException e) {
-				this.operacionSatisfactoria=false;
-				System.out.println("Error: El archivo de definicion JSON no se encuentra en la ruta especificada.");
 			} catch (IOException e) {
 				this.operacionSatisfactoria=false;
-				System.out.println("Error: Ha ocurrido un problema en la lectura del archivo de definicion JSON - IO Error");
+				System.out.println("IO Error: Error al querer leer archivo de definicion JSON");
 			}
 		} else {
 			this.operacionSatisfactoria=false;

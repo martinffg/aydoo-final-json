@@ -1,0 +1,6 @@
+{"campos":[
+	{"nombre":"nombre", "tipo":"string"}, 
+	{"nombre":"apellido", "tipo":"string"},
+	{"nombre":"casado", "tipo":"boolean"},
+	{"nombre":"edad", "tipo":"integer"}
+]}

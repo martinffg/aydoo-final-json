@@ -8,23 +8,23 @@ import main.java.aydoo.ManejadorJson;
 import main.java.aydoo.RegistroJson;
 
 public class ManejadorJsonTest {
-	
 	@Test
 	public void leerConManejadorJsonTest() {
 		
-		String pathYNombreArchivoJson = "testFiles/definicion-producto.json";
+		String pathYNombreArchivoJson = "testFiles/definicion-persona.json";
 		boolean esArchivoDeSalida=false;
 		ManejadorJson mjson = new ManejadorJson(pathYNombreArchivoJson,esArchivoDeSalida);
 		mjson.leerDefinicionJson();
-		Assert.assertEquals(2,mjson.getArchivoDinamico().size());
+		Assert.assertEquals(4,mjson.getArchivoDinamico().size());
 	}
 	
 	@Test
 	public void leerYescribirConManejadorJsonTest() {
 		
-		String pathEntradaArchivoJson = "testFiles/definicion-producto.json";
-		String pathSalidaArchivoJson = "testFiles/producto.json";
+		String pathEntradaArchivoJson = "testFiles/definicion-persona.json";
+		String pathSalidaArchivoJson = "testFiles/persona.json";
 		ArrayList<RegistroJson> archivoSalidaDinamico;
+		RegistroJson registro;
 				
 		ManejadorJson lecturaMJson = new ManejadorJson(pathEntradaArchivoJson,false);
 		ManejadorJson escrituraMJson = new ManejadorJson(pathSalidaArchivoJson,true);
@@ -34,7 +34,16 @@ public class ManejadorJsonTest {
 			archivoSalidaDinamico = lecturaMJson.getArchivoDinamico();
 			Iterator<RegistroJson> iterador = archivoSalidaDinamico.iterator();
 			while (iterador.hasNext()){
-				iterador.next().setValor("datoEjemplo");
+				registro = iterador.next();
+				switch (registro.getTipo()) {
+					case "boolean": {registro.setValor("true"); }
+						break;
+					case "integer": {registro.setValor("18"); }
+						break;
+					default: { registro.setValor("datoEjemplo");}
+				}
+				
+				//iterador.next().setValor("datoEjemplo");
 			}
 			escrituraMJson.setArchivoDinamico(archivoSalidaDinamico);
 		}
@@ -58,6 +67,36 @@ public class ManejadorJsonTest {
 		}
 		
 		Assert.assertFalse(escrituraMJson.isOperacionSatisfactoria());
+	}
+	
+	@Test
+	public void escribirArchivoEntradaPorErrorManejadorJsonTest() {
+		
+		String pathEntradaArchivoJson = "testFiles/definicion-producto.json";
+		
+		ManejadorJson lecturaMJson = new ManejadorJson(pathEntradaArchivoJson,false);;
+						
+		try { 	
+			lecturaMJson.escribirSalidaJson();
+		} catch (Exception e) {
+			System.out.println("Error de escritura en archivo de definicion."); 
+		}
+		
+		Assert.assertFalse(lecturaMJson.isOperacionSatisfactoria());
+	}
+	
+	@Test
+	public void leerRutaVaciaConManejadorJsonTest() {
+		
+		String pathYNombreArchivoJson = "";
+		boolean esArchivoDeSalida=false;
+		ManejadorJson mjson = new ManejadorJson(pathYNombreArchivoJson,esArchivoDeSalida);
+		String prueba= mjson.getPath();
+		prueba="";
+		mjson.setPath(prueba);
+		System.out.println(mjson.getPath() + "ESTE ES EL PATH DEL ULTIMO TEST");
+		mjson.escribirSalidaJson();
+		Assert.assertFalse(mjson.isOperacionSatisfactoria());
 	}
 	
 }

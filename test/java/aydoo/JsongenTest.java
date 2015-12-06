@@ -17,7 +17,8 @@ public class JsongenTest {
 		ByteArrayOutputStream testOut = new ByteArrayOutputStream();
 		PrintStream testOutPrintStream = new PrintStream(testOut);
 		System.setOut(testOutPrintStream);
-
+		jsongen jsonMain = new jsongen();
+				
 		jsongen.main(new String[] { archivoEntrada, archivoSalida });
 
 		String newLine = System.getProperty("line.separator");
@@ -27,6 +28,7 @@ public class JsongenTest {
 		String expected = mensajeEscrituraSatisfactoria + newLine;
 
 		Assert.assertEquals(expected, testOut.toString());
+		Assert.assertNotNull(jsonMain);
 
 	}
 
