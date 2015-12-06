@@ -27,15 +27,15 @@ public class ManejadorJson {
 			ParserJson parserJson=new ParserJson();
 			try {
 				fileLectura = new FileReader(this.path);
-				  this.archivoDinamico=parserJson.getArchivoDinamico(fileLectura);
+				this.archivoDinamico=parserJson.getArchivoDinamico(fileLectura);
 		        fileLectura.close();
 		        this.operacionSatisfactoria=true;
 			} catch (FileNotFoundException e) {
 				this.operacionSatisfactoria=false;
-				e.printStackTrace();
+				System.out.println("Error: El archivo de definicion JSON no se encuentra en la ruta especificada.");
 			} catch (IOException e) {
 				this.operacionSatisfactoria=false;
-				e.printStackTrace();
+				System.out.println("Error: Ha ocurrido un problema en la lectura del archivo de definicion JSON - IO Error");
 			}
 		} else {
 			this.operacionSatisfactoria=false;
@@ -54,7 +54,7 @@ public class ManejadorJson {
 		        this.operacionSatisfactoria=true;
 			} catch (IOException e) {
 				this.operacionSatisfactoria=false;
-				e.printStackTrace();
+				System.out.println("Error: Ha ocurrido un problema en la escritura del archivo JSON de salida IO Error");
 			} 
 		} else {
 			this.operacionSatisfactoria=false;

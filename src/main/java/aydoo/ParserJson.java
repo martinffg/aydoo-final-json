@@ -16,7 +16,7 @@ public class ParserJson {
 	private ArrayList<RegistroJson> archivoDinamico;
 
 	public ArrayList<RegistroJson> getArchivoDinamico(FileReader fileLectura) {
-this.archivoDinamico=new ArrayList<RegistroJson>();
+		this.archivoDinamico=new ArrayList<RegistroJson>();
 		this.parserDatos(fileLectura);
 		return archivoDinamico;
 	}
