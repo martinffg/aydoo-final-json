@@ -42,8 +42,6 @@ public class ManejadorJsonTest {
 						break;
 					default: { registro.setValor("datoEjemplo");}
 				}
-				
-				//iterador.next().setValor("datoEjemplo");
 			}
 			escrituraMJson.setArchivoDinamico(archivoSalidaDinamico);
 		}
@@ -94,7 +92,6 @@ public class ManejadorJsonTest {
 		String prueba= mjson.getPath();
 		prueba="";
 		mjson.setPath(prueba);
-		System.out.println(mjson.getPath() + "ESTE ES EL PATH DEL ULTIMO TEST");
 		mjson.escribirSalidaJson();
 		Assert.assertFalse(mjson.isOperacionSatisfactoria());
 	}
