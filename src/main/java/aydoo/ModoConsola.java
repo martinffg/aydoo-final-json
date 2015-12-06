@@ -5,7 +5,7 @@ public class ModoConsola {
 	boolean escrituraSatisfactoria, errorExtension;
 	final String mensajeErrorExtension = "Las extensiones no son iguales";
 	final String mensajeEscrituraSatisfactoria = "El archivo se escribio Correctamente";
-	final String mensajeEscrituraNoSatisfactoria = "ERROR, El archivo se escribio Correctamente";
+	final String mensajeEscrituraNoSatisfactoria = "ERROR, El archivo no se escribio";
 
 	public ModoConsola(String archivoEntrada, String archivoSalida) {
 

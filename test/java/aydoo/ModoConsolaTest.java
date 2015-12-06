@@ -28,7 +28,7 @@ public class ModoConsolaTest {
 	modoConsola.ejecutar();
 
 	Assert.assertFalse(modoConsola.isEscrituraSatisfactoria());
-	Assert.assertEquals (modoConsola.mensajeDeSalida(),"ERROR, El archivo se escribio Correctamente");
+	Assert.assertEquals (modoConsola.mensajeDeSalida(),"ERROR, El archivo no se escribio");
 	}
 
 	@Test

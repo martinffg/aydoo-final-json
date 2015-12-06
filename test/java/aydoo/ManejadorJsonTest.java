@@ -43,4 +43,21 @@ public class ManejadorJsonTest {
 		Assert.assertFalse(!escrituraMJson.isOperacionSatisfactoria());
 	}
 	
+	
+	@Test
+	public void leerArchivoSalidaPorErrorManejadorJsonTest() {
+		
+		String pathSalidaArchivoJson = "testFiles/producto.json";
+		
+		ManejadorJson escrituraMJson = new ManejadorJson(pathSalidaArchivoJson,true);;
+						
+		try { 	
+			escrituraMJson.leerDefinicionJson();
+		} catch (Exception e) {
+			System.out.println("Error en la apertura solo lectura en archivo de salida"); 
+		}
+		
+		Assert.assertFalse(escrituraMJson.isOperacionSatisfactoria());
+	}
+	
 }
