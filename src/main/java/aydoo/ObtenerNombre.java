@@ -13,7 +13,7 @@ public class ObtenerNombre {
 		return upperCasePrimeraLetra(this.nombre.substring(this.nombre.indexOf('-') + 1, this.nombre.indexOf('.') ));
 
 	}
-	
+
 	public String getExtensionArchivo() {
 
 		return this.nombre.substring(this.nombre.length()-4);
@@ -25,6 +25,11 @@ public class ObtenerNombre {
 
 	}
 
+	public boolean isExtensionesIguales(String nombreArchivo) {
+
+		return (this.getExtensionArchivo().equals(nombreArchivo.substring(nombreArchivo.length() - 4)));
+
+	}
 	public String getNombreArchivo() {
 
 		return this.nombre.substring(this.nombre.indexOf('-') + 1);
@@ -38,9 +43,9 @@ public class ObtenerNombre {
 	    for (int i = 0; i < chars.length; i++) {
 	        if ((Character.isLetter(chars[i]))&& (isPrimeraLetra)) {
 	                chars[i] = Character.toUpperCase(chars[i]);
-	            isPrimeraLetra = false; 
-	           
-	        } 
+	            isPrimeraLetra = false;
+
+	        }
 	    }
 	    return new String(chars);
 	}
