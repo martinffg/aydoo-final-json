@@ -8,3 +8,7 @@ addons:
       - oracle-java8-installer
 
 script: "./build_all.sh"
+
+before_install:
+- export DISPLAY=:99.0
+- sh -e /etc/init.d/xvfb start
