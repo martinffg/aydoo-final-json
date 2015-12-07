@@ -98,12 +98,10 @@ public class ManejadorJson {
 		String tipoValor=tipo.toLowerCase();
 		String cadena="";
 		switch (tipoValor) {
-		case "boolean": {cadena=valor; }
+		case "string": { cadena="\""+valor+"\"";}
 			break;
-		case "integer": {cadena=valor; }
+		default: {cadena=valor; }
 			break;
-		default: { cadena="\""+valor+"\"";}
-
 		}
 		return cadena;
 	}
