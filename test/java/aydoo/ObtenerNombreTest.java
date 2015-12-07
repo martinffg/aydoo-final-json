@@ -47,6 +47,16 @@ public class ObtenerNombreTest {
 	}
 
 	@Test
+	public void obtenerLaCantidadDeCaracteresEncontrados() {
+		String archivoEntrada = "testFiles/definicion-producto.json";
+
+		ObtenerNombre cadena = new ObtenerNombre(archivoEntrada);
+		int cantidadEncontrada = cadena.getCantidadDeCaracteres('o');
+
+		Assert.assertEquals(cantidadEncontrada, 4);
+	}
+
+	@Test
 	public void dosExtensionesNoIgualesDevuelveFalse() {
 		String archivoEntrada = "testFiles/definicion-producto.json";
 		String archivoSalida = "testFiles/producto.js";
