@@ -1,11 +1,11 @@
 package main.java.aydoo;
 
 public class ModoConsola {
-	String archivoEntrada, archivoSalida;
-	boolean escrituraSatisfactoria, errorExtension;
-	final String mensajeErrorExtension = "Las extensiones no son iguales";
-	final String mensajeEscrituraSatisfactoria = "El archivo se escribio Correctamente";
-	final String mensajeEscrituraNoSatisfactoria = "ERROR, El archivo no se escribio";
+	private String archivoEntrada, archivoSalida;
+	private boolean escrituraSatisfactoria, errorExtension;
+	private final String mensajeErrorExtension = "Las extensiones no son iguales";
+	private final String mensajeEscrituraSatisfactoria = "El archivo se escribio Correctamente";
+	private final String mensajeEscrituraNoSatisfactoria = "ERROR, El archivo no se escribio";
 
 	public ModoConsola(String archivoEntrada, String archivoSalida) {
 

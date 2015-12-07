@@ -7,7 +7,6 @@ import javafx.scene.control.TextField;
 public class TextFieldFloat {
 
 	private TextField field;
-
 	private String tipoDeVariable;
 
 	public TextFieldFloat (TextField field,String tipoVariable){

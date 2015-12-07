@@ -7,7 +7,6 @@ import javafx.scene.control.TextField;
 public class TextFieldDouble {
 
 	private TextField field;
-
 	private String tipoDeVariable;
 
 	public TextFieldDouble(TextField field, String tipoVariable) {
