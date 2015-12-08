@@ -1,0 +1,7 @@
+{"campos":[
+	{"nombre":"identificador", "tipo":"String"}, 
+	{"nombre":"id", "tipo":"Integer"}, 
+	{"nombre":"sueldo", "tipo":"double"}, 
+	{"nombre":"Contratado", "tipo":"Boolean"}, 
+	{"nombre":"apellido", "tipo":"String"}
+]}

@@ -1,6 +1,3 @@
-package test.java.aydoo;
-
-import main.java.aydoo.jsongen;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import org.junit.Assert;

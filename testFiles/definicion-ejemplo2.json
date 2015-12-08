@@ -1,0 +1,18 @@
+{"campos":[
+	{"nombre":"identificador", "tipo":"Integer"}, 
+	{"nombre":"apellido", "tipo":"String"},
+	{"nombre":"nombre", "tipo":"String"},
+	{"nombre":"esVaron", "tipo":"Boolean"},
+	{"nombre":"dinero", "tipo":"Double"},
+	{"nombre":"peso", "tipo":"Float"},
+	{"nombre":"profesion", "tipo":"null"},
+	{"nombre":"edad", "tipo":"number"},
+	{"nombre":"identificador2", "tipo":"Integer"}, 
+	{"nombre":"apellido2", "tipo":"String"},
+	{"nombre":"nombre2", "tipo":"String"},
+	{"nombre":"esVaron2", "tipo":"Boolean"},
+	{"nombre":"dinero2", "tipo":"Double"},
+	{"nombre":"peso2", "tipo":"Float"},
+	{"nombre":"profesion2", "tipo":"null"},
+	{"nombre":"edad2", "tipo":"number"}
+]}

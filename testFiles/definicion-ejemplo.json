@@ -1,0 +1,10 @@
+{"campos":[
+	{"nombre":"identificador", "tipo":"Integer"}, 
+	{"nombre":"apellido", "tipo":"String"},
+	{"nombre":"nombre", "tipo":"String"},
+	{"nombre":"esVaron", "tipo":"Boolean"},
+	{"nombre":"dinero", "tipo":"Double"},
+	{"nombre":"peso", "tipo":"Float"},
+	{"nombre":"profesion", "tipo":"null"},
+	{"nombre":"edad", "tipo":"number"}
+]}
